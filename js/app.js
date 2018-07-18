@@ -1,7 +1,7 @@
 /*
  * Create a list that holds all of your cards
  */
-const singleCards = ["fa-diamond","fa-paper-plane-o","fa-anchor","fa-bolt","fa-cube","fa-leaf","fa-bicycle","fa-bomb"]
+const singleCards = ["fa-bank","fa-camera","fa-futbol-o","fa-heart","fa-laptop","fa-percent","fa-phone","fa-umbrella"]
 const cards = singleCards.concat(singleCards);
 let shuffledCards = [];
 let moveCounter = 0;
