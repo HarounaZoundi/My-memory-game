@@ -17,8 +17,8 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Coda', cursive;
+    background: url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Playfair Display', serif;
 }
 
 .container {
@@ -26,12 +26,18 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width:100vw;
+    height:100vhs;
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 300;
+    font-size:4em;
+    font-family: 'Fontdiner Swanky', cursive;
+
 }
+
+
 
 /*
  * Styles for the deck of cards
@@ -71,14 +77,23 @@ h1 {
     cursor: default;
 }
 
+.deck .card.close {
+    animation-name: shake;
+    animation-duration: 1s;
+
+}
+
 .deck .card.show {
     font-size: 33px;
 }
+
 
 .deck .card.match {
     cursor: default;
     background: #02ccba;
     font-size: 33px;
+    animation-name: makebig;
+    animation-duration: 1s;
 }
 
 /*
@@ -89,11 +104,12 @@ h1 {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
+    
 }
 
 .score-panel .stars {
     margin: 0;
-    padding: 0;
+    padding-left: 10px;
     display: inline-block;
     margin: 0 5px 0 0;
 }
@@ -103,10 +119,48 @@ h1 {
     display: inline-block;
 }
 
+.starsSection {
+    width: 100%;
+    text-align:center;
+}
+
 .score-panel .restart {
     float: right;
+    text-align:right;
     cursor: pointer;
+    width: 50% ;
+    font-family: 'Playfair Display', serif;
 }
+
+.score-panel .timeSection {
+    width:100%;
+    text-align:center;
+    padding-top: 5px;
+    padding-bottom:5px;
+}
+
+.deckArea {
+    position: relative;
+    z-index: 1;
+    min-width: 330px;
+    width: 660px;
+    min-height: 680px;
+    text-align: center;
+   
+}
+
+.score-panel .moveSection {
+    float:left;
+    width:50%;
+
+}
+
+.cardArea {
+    position: absolute;
+    z-index: 2; 
+}
+
+/* Pop Up Window */
 .popup {
     display: inline-block;
     cursor: pointer;
@@ -142,3 +196,80 @@ h1 {
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s
 }
+
+.playagain {
+    background-color:#fff;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: auto;
+    font-size: 1.2em;
+    position:absolute;
+    opacity: 1;
+    width: 250px;
+    height:50px;
+    margin:10%;
+    vertical-align: middle;
+    line-height: 50px; 
+}
+
+.finalStars {
+    margin:0;
+    padding: 0;
+    list-style-type: none;
+    text-align:center;
+}
+
+.finalStars li {
+    display: inline;
+}
+
+/*Animations*/
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+    background: #02b3e4;
+    font-size: 33px;
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+    background: #2e3d49;
+    font-size: 33px;
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+    background: #02b3e4;
+    font-size: 33px;
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+     background: #2e3d49;
+     font-size: 33px;
+  }
+}
+
+@keyframes makebig {
+    20% {transform: scale(1); }
+    60% {transform: scale(2);}
+    100% {transform: scale(1);}
+}
+
+
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+
+
