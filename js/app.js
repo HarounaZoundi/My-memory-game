@@ -6,7 +6,7 @@ const cards = singleCards.concat(singleCards);
 let deck = document.querySelector(".deckArea");
 let shuffledCards = [];
 let moveCounter = 0;
-//let gameTimer = setInterval(updateDisplay, 1000); // every second call updateDisplay
+let gameTimer = setInterval(updateDisplay, 1000); // every second call updateDisplay
 let stars = document.querySelector(".stars");
 let popup = document.querySelector(".popup");
 let openCards = [];
@@ -53,6 +53,10 @@ function restart(){
 	cardShuffle();
     $("li.card").removeClass("open show match");
     $(".moves").text(moveCounter);
+     $('.timer').find('.value').text("0");
+    gameTimer = setInterval(updateDisplay, 1000); // every second call updateDisplay
+    addStars();
+    let stars = document.querySelector(".stars");
 
 }
 function replay(){
@@ -90,13 +94,43 @@ function openCard(){
                 /*  - if the list already has another card, check to see if the two cards match*/
                 if(openCards.length === 2){
                     matchCard();
+                     removeStars();
       
                 }
             }
         }
 
         
-}/* if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one) */
+}
+/* Remove stars at certain intervals of the game*/
+function removeStars(){
+
+
+    if (moveCounter === 18)
+    {
+       stars.removeChild(stars.firstElementChild);
+    }
+
+    if (moveCounter  === 23)
+    {
+       stars.removeChild(stars.firstElementChild);
+    }
+
+    
+}
+
+/* Add stars back at the replay or restart of game */
+function addStars(){
+    let stars = $(".stars");
+    stars.empty();
+    stars.append("<li><i class='fa fa-star'></i></li>");
+    stars.append("<li><i class='fa fa-star'></i></li>");
+    stars.append("<li><i class='fa fa-star'></i></li>");
+
+
+}
+
+/* if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one) */
 function matchCard() {
     var card1 = openCards[0].find("i").attr("class");
     var card2 = openCards[1].find("i").attr("class");
@@ -108,9 +142,7 @@ function matchCard() {
         openCards = [];
         cardIDs = [];
         cardList.push(card1,card2);
-        openCards[0].removeClass("open show");
-		openCards[1].removeClass("open show");
-  
+        
     } 
     else {
 
@@ -144,15 +176,35 @@ function showScore(){
 	moveCounter++;
 	$(".moves").text(moveCounter);
 }
+
+/* Update timer display */
+function updateDisplay() {
+    let value = parseInt($('.timer').find('.value').text(), 10);
+    value++;
+    $('.timer').find('.value').text(value);
+}
+
+/* Stop Timer */
+function stopTimer() {
+    clearInterval(gameTimer);
+}
 /* if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)*/
  function gameOver() {
 
-    let numberOfMoves = Number($(".moves").textContent);
-    
+     let numberOfMoves = Number($(".moves").textContent);
+    let time = document.querySelector('.value').textContent;
+    let finalScore = Math.round((Number(time)/moveCounter) * 1000);
+    let starHTML = stars.outerHTML;
     let playAgain = "<div class='playagain'> Play Again? </div>";
+
+    stopTimer();
+    popup.classList.toggle("show");
+    popup.insertAdjacentHTML('beforeend', `<p>Game Over!</p> <p>Your Score Is  ${finalScore}.</p><p>You completed this in ${time} seconds.</p>`);
+    popup.insertAdjacentHTML('beforeend',starHTML);
+    popup.lastElementChild.classList = "finalStars";
+
+    popup.insertAdjacentHTML('beforeend',playAgain);
     let playButton = $(".playagain");
-
     playButton.click(replay);
-
 }
 
