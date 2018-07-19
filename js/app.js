@@ -73,7 +73,7 @@ function openCard(){
         {
             /*Add to list of current cards for this play of the game */
             cardIDs.push(currentCardID);
-            if($(this).classlist !== 'card open show match'){
+            if(selectedCard.classlist !== 'card open show match'){
                 $(this).removeClass('close');
                 $(this).toggleClass('open');
                 $(this).toggleClass('show');

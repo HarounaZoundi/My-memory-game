@@ -6,6 +6,7 @@
     <title>Memory Game</title>
     <meta name="description" content="">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky|Playfair+Display:200" rel="stylesheet prefetch">
     <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="css/responsive.css">
@@ -29,9 +30,12 @@
             <div class="restart">
         		<i class="fa fa-repeat"></i>
         	</div>
+            <div class="time"><span class="value">0</span> seconds</div>
         </section>
-
-        <ul class="deck">
+        <div class="deckArea">
+             <span class=" popup popuptext" id="myPopup">
+                </span>
+            <ul class="deck">
             <li class="card" id="c1">
                 <i class="fa "></i>
             </li>
@@ -81,6 +85,8 @@
                 <i class="fa "></i>
             </li>
         </ul>
+        </div>
+        
     </div>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/app.js"></script>
