@@ -3,10 +3,12 @@
  */
 const singleCards = ["fa-bank","fa-camera","fa-futbol-o","fa-heart","fa-laptop","fa-percent","fa-phone","fa-umbrella"]
 const cards = singleCards.concat(singleCards);
+let deck = document.querySelector(".deckArea");
 let shuffledCards = [];
 let moveCounter = 0;
+//let gameTimer = setInterval(updateDisplay, 1000); // every second call updateDisplay
 let stars = document.querySelector(".stars");
-let popup = document.getElementById("myPopup");
+let popup = document.querySelector(".popup");
 let openCards = [];
 let selectedCard = $("li.card");
 let cardIDs = [];
@@ -18,7 +20,7 @@ let cardList = [];
  *   - loop through each card and create its HTML
  *   - add each card's HTML to the page
  */
- restart();
+ cardShuffle();
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -46,10 +48,16 @@ function restart(){
 	shuffledCards = [];
 	moveCounter = 0;
 	openCards = [];
+    cardIDs = [];
+    cardList = [];
 	cardShuffle();
     $("li.card").removeClass("open show match");
     $(".moves").text(moveCounter);
 
+}
+function replay(){
+    restart();
+    $( ".popuptext" ).empty();
 }
 
 /* Restart Game Listener */
