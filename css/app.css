@@ -18,7 +18,7 @@ body {
 
 body {
     background: url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
-    font-family: 'Playfair Display', serif;
+   font-family: 'Indie Flower', cursive;
 }
 
 .container {
@@ -33,7 +33,7 @@ body {
 h1 {
     font-weight: 300;
     font-size:4em;
-    font-family: 'Fontdiner Swanky', cursive;
+    font-family: 'Indie Flower', cursive;
 
 }
 
@@ -119,7 +119,7 @@ h1 {
     display: inline-block;
 }
 
-.starsSection {
+.stars {
     width: 100%;
     text-align:center;
 }
@@ -132,7 +132,7 @@ h1 {
     font-family: 'Playfair Display', serif;
 }
 
-.score-panel .timeSection {
+.score-panel .timer {
     width:100%;
     text-align:center;
     padding-top: 5px;
@@ -149,7 +149,7 @@ h1 {
    
 }
 
-.score-panel .moveSection {
+.score-panel .move {
     float:left;
     width:50%;
 
@@ -254,7 +254,7 @@ h1 {
 
 @keyframes makebig {
     20% {transform: scale(1); }
-    60% {transform: scale(2);}
+    60% {transform: scale(1.5);}
     100% {transform: scale(1);}
 }
 
