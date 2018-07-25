@@ -45,12 +45,13 @@ function cardShuffle() {
     }
 }
 function restart(){
+    cardShuffle();
 	shuffledCards = [];
 	moveCounter = 0;
 	openCards = [];
     cardIDs = [];
     cardList = [];
-	cardShuffle();
+	
     $("li.card").removeClass("open show match");
     $(".moves").text(moveCounter);
      $('.timer').find('.value').text("0");

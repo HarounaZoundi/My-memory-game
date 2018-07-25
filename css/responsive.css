@@ -1,52 +1,169 @@
-@media screen and (max-width: 330px) {
+.content-wrap {
+    display: flex;
+    flex-wrap: wrap;
+      width: 100%;
+}
+.box{
+    text-align: center;
+}
 
+@media screen and (max-width: 700px) {
     .container {
         margin:auto;
     }
 
-    h1 {font-size: 2em}
+    h1 {
 
-	.starsSection {
-        width: 100%;
+        font-size: 3em
+
+    }
+
+	.score-panel,
+    .stars, 
+    .restart,
+    .moves-container,
+    .timer{
         text-align: center;
         padding-top: 5px;
         padding-bottom: 5px;
 	}
 
-	.score-panel .restart {
-        width: 100% ;
-        text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-	.score-panel .moveSection {
-        width:100%;
-        text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    .score-panel .timeSection {
-        width:100%;
-        text-align:center;
-        padding-top: 12px;
-        padding-bottom:5px;
-        margin: auto;
-    }
-
     .deckArea {
-        width: 300px;
+        width: 600px;
         min-height: 350px;
         text-align: center;
        
     }
 
     .deck {
-        width: 300px;
-        min-height: 350px;
+        width: 500px;
+        min-height: 500px;
         padding: 10px;
-        margin-left:5%;
+        margin: 5%;
+    }
+
+    .deck .card {
+        height: 100px;
+        width: 100px;
+    }
+
+    .popup .popuptext {
+        padding: 5px;
+        font-size: 1em;
+        height: auto;
+        text-align: center;
+    }
+
+    .playagain {
+        font-size: .9em;
+        width: 125px;
+        height:40px;
+        line-height: 40px; 
+        margin:10%;
+        background-color:#2e3d49;
+        color: #fff;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 580px) {
+
+    .container {
+        margin:auto;
+    }
+
+    h1 {
+
+        font-size: 2em
+
+    }
+
+    .score-panel,
+    .stars, 
+    .restart,
+    .moves-container,
+    .timer{
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .deckArea {
+        width: 100%;
+        min-height: 500px;
+        text-align: center;
+        align-items: center; 
+        margin: 5%;
+    }
+
+    .deck {
+        width: 300px;
+        min-height: 300px;
+        padding: 10px;
+        text-align: center;
+        margin: 5%;
+    }
+
+    .deck .card {
+        height: 60px;
+        width: 60px;
+    }
+
+    .popup .popuptext {
+        padding: 5px;
+        font-size: 1em;
+        height: auto;
+        text-align: center;
+        
+    }
+
+    .playagain {
+        font-size: .9em;
+        width: 125px;
+        height:40px;
+        line-height: 40px; 
+        margin:10%;
+        background-color:#2e3d49;
+        color: #fff;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .container {
+        margin:auto;
+    }
+
+    h1 {
+
+        font-size: 2em
+
+    }
+
+    .score-panel,
+    .stars, 
+    .restart,
+    .moves-container,
+    .timer{
+        text-align: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .deckArea {
+        width: 100%;
+        min-height: 300px;
+        text-align: center;
+        margin: 5%;
+    }
+
+    .deck {
+        width: 300px;
+        min-height: 300px;
+        padding: 10px;
+        text-align: center;
+        margin-left: 5%;
+       
     }
 
     .deck .card {
@@ -70,86 +187,4 @@
         background-color:#2e3d49;
         color: #fff;
     }
-
-
-
-}
-
-
-@media screen and (min-width: 360px) and (max-width: 660px) {
-	h1 {font-size: 2em}
-	.starsSection {
-        width: 100%;
-        text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-	}
-
-	.score-panel .restart {
-        width: 100% ;
-        text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-	.score-panel .moveSection {
-        width:100%;
-        text-align: center;
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-
-    .score-panel .timeSection {
-        width:100%;
-        text-align:center;
-        padding-top: 12px;
-        padding-bottom:5px;
-        margin: auto;
-    }
-
-    .deckArea {
-        width: 330px;
-        min-height: 380px;
-        text-align: center;
-   
-    }
-
-    .deck {
-        width: 330px;
-        min-height: 380px;
-        padding: 16px;
-        margin: 0 0 3em;
-    }
-
-    .deck .card {
-        height: 62.5px;
-        width: 62.5px;
-    }
-
-    .popup .popuptext {
-        padding: 5px;
-        font-size: 1em;
-        height: auto;
-        
-    }
-
-    .playagain {
-        font-size: 1em;
-        width: 125px;
-        height:40px;
-        line-height: 40px; 
-        margin:10%;
-        background-color:#2e3d49;
-        color: #fff;
-    }
-
-}
-
-@media screen and (min-width: 500px) and (max-width:1030px){
-	h1 {font-size: 2em}
-    
-	.score-panel {
-		font-size:1.5em;
-	}
-	
 }

@@ -99,8 +99,10 @@ h1 {
 
 
 .score-panel {
-    text-align: left;
-    width: 345px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
     margin-bottom: 10px;
     
 }
@@ -121,10 +123,12 @@ h1 {
     width: 100%;
     text-align:center;
 }
-
+.moves-container {
+    width: 50%;
+    text-align: center;
+}
 .score-panel .restart {
-    float: right;
-    text-align:right;
+    text-align: center;
     cursor: pointer;
     width: 50% ;
     font-family: 'Playfair Display', serif;
