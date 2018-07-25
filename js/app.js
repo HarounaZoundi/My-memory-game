@@ -8,7 +8,7 @@ let shuffledCards = [];
 let moveCounter = 0;
 let gameTimer = setInterval(updateDisplay, 1000); // every second call updateDisplay
 let stars = document.querySelector(".stars");
-let popup = document.querySelector(".popup");
+let popup = document.querySelector(".popuptext");
 let openCards = [];
 let selectedCard = $("li.card");
 let cardIDs = [];
@@ -61,6 +61,7 @@ function restart(){
 }
 function replay(){
     restart();
+    popup.classList.removeClass("show");
     $( ".popuptext" ).empty();
 }
 
@@ -191,12 +192,12 @@ function stopTimer() {
 /* if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)*/
  function gameOver() {
 
-     let numberOfMoves = Number($(".moves").textContent);
+    let numberOfMoves = Number($(".moves").textContent);
     let time = document.querySelector('.value').textContent;
     let finalScore = Math.round((Number(time)/moveCounter) * 1000);
     let starHTML = stars.outerHTML;
     let playAgain = "<div class='playagain'> Play Again? </div>";
-
+    
     stopTimer();
     popup.classList.toggle("show");
     popup.insertAdjacentHTML('beforeend', `<p>Game Over!</p> <p>Your Score Is  ${finalScore}.</p><p>You completed this in ${time} seconds.</p>`);
