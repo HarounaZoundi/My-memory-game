@@ -61,7 +61,7 @@ function restart(){
 }
 function replay(){
     restart();
-    popup.classList.removeClass("show");
+    popup.classList.toggle("show");
     $( ".popuptext" ).empty();
 }
 
